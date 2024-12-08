@@ -20,6 +20,31 @@ const SignupScreen = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorVisible, setErrorVisible] = useState(false);
 
+  const handleContinue = () => {
+    if (!email || !username || !password || !confirmPassword) {
+      Alert.alert('Error', 'Please fill all fields');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setErrorVisible(true);
+    } else {
+      setErrorVisible(false);
+
+      // Save user details in context
+      setUserDetails({ email, username });
+
+      Alert.alert('Success', 'Account Created Successfully!', [
+        {
+          text: 'OK',
+          onPress: () => {
+            navigation.navigate('MainTabs'); // Navigate to MainTabs
+          },
+        },
+      ]);
+    }
+  };
+
   return (
     <div>
 
