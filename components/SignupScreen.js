@@ -46,12 +46,58 @@ const SignupScreen = ({ navigation }) => {
   };
 
   return (
-    <div>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Sign Up</Text>
 
-    </div>
-  )
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          placeholderTextColor={theme.colors.textSecondary}
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Username"
+          placeholderTextColor={theme.colors.textSecondary}
+          value={username}
+          onChangeText={setUsername}
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          placeholderTextColor={theme.colors.textSecondary}
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Confirm Password"
+          placeholderTextColor={theme.colors.textSecondary}
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+          secureTextEntry
+        />
+
+        {errorVisible && (
+          <Text style={styles.errorText}>Passwords do not match</Text>
+        )}
+
+        <CustomButton
+          title="Continue"
+          onPress={handleContinue}
+          type="secondary"
+        />
+      </View>
+    </TouchableWithoutFeedback>
+  );
 };
-
 
 
 export default SignupScreen;
