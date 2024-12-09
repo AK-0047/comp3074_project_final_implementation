@@ -1,4 +1,14 @@
-# Sample Snack app
+# Project Final Implementation
+
+# Group - 66
+
+# Team members: 
+1) Anshul Kamboya - 101416629
+2) Aryan Patel - 101414520
+3) Piyush Patel - 101410303
+4) Affan Shaikh - 101413399
+
+# Project Name: RouteShare
 
 Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
 
